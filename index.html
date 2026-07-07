@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Surf</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
+    <script src="https://kit.fontawesome.com/26bd003b94.js" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+    
+    <nav>
+        <div class="nav__section">
+            <div class="logo__container">
+                <img src="./assets/logo.svg" alt="Logo">
+                <p class="logo__text">Cinema Surf</p>
+            </div>
+            <ul class="nav__items">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">TV Shows</a></li>
+                <li><a href="#">My List</a></li>
+            </ul>
+       
+        </div>
+    </nav>
+    <header>
+        <div class="header__section">
+            <h1 class="header__title">Search for a Movie</h1>
+            <div class="search__bar">
+                <input type="text" id="search-bar" onchange="getMovies(this.value)" placeholder="Enter movie title...">
+                <button id="searchButton">Search</button>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="content">
+            <div class="sort__bar">
+                <h2 class="sort__title">Search Results:</h2>
+                <select id="sort-menu" onchange="sortMovies(this.value)">
+                    <option value="NO_SORT" selected>No Sorting</option>
+                    <option value="a-z">Alphabetical, A to Z</option>
+                    <option value="z-a" >Alphabetical, Z to A</option>
+                    <option value="newest">Release Year, New to Old</option>
+                    <option value="oldest">Release Year, Old to New</option>
+                </select>
+            </div>
+            <div class="movies">
+            </div>
+        </div>
+    </section>
+</body>
+</html>
