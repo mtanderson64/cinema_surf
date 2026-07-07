@@ -33,7 +33,7 @@ async function getMovies(searchTerm) {
 
     let moviesHtml
 
-    const moviesData = await fetch(`http://www.omdbapi.com/?apikey=aea30197&s=${encodeURIComponent(searchTerm)}`)
+    const moviesData = await fetch(`https://www.omdbapi.com/?apikey=aea30197&s=${encodeURIComponent(searchTerm)}`)
     movies = await moviesData.json()
     console.log(movies)
 
