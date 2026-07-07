@@ -37,7 +37,19 @@ async function getMovies(searchTerm) {
     movies = await moviesData.json()
     console.log(movies)
 
-    if (!searchTerm || movies.Response === "False") {
+    if (!searchTerm) {
+        moviesHtml = ''
+        for (let i = 0; i < 6; i++) {
+            moviesHtml += `<div class="movie">
+                <img src="./assets/movie_poster.png" alt="Movie Poster">
+                
+                <p class="movie__title">Movie Title <span class="movie__info">(Year)</span></p>
+            </div>`
+        }
+        moviesWrapper.innerHTML = moviesHtml
+        return
+    }
+    else if (movies.Response === "False") {
         moviesHtml = ''
         for (let i = 0; i < 6; i++) {
             moviesHtml += `<div class="movie">
@@ -88,8 +100,7 @@ function displayMovies(moviesToDisplay) {
     moviesWrapper.innerHTML = moviesHtml
 }
 
-
-getMovies()
+getMovies('bean')
 
 document.getElementById('search-bar').addEventListener('input', function() {
     getMovies(this.value);
